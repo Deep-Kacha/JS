@@ -18,3 +18,16 @@ let state = null
 console.log(typeof "Deep")
 console.log(typeof 18)
 console.log(typeof null)
+
+//----------------------------------Operations---------------------------------
+
+let value = 3
+let negValue = -value
+// console.log(negValue)
+
+let str1 = "Hello"
+let str2 = " Deep"
+
+let str3 = str1 + str2
+console.log(str3) 
+
