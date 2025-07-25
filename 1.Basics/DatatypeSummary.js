@@ -40,3 +40,30 @@ function greet() {
 }
 
 greet()
+
+let x = 5;
+let y = 10;
+let result = eval("x + y");
+console.log(result); // 15
+console.log(typeof eval); // function
+
+//=======================================================
+// stack(Primitive), heap(Non-Primitive) memory
+
+let myName = "Deep"
+let anotherName = myName
+anotherName = "Deepak"
+console.log(anotherName)
+console.log(myName)
+
+let user ={
+    email : "user@gm.com",
+    upi : "user@upi"
+}
+
+let user2 = user
+
+user2.email = "demo@gmail.log"
+
+console.log(user.email)
+console.log(user2.email)
