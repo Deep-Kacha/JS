@@ -34,3 +34,4 @@ console.log(url.includes("google")) // true;
 console.log(url.includes("deep")) // true;
 
 console.log(name.split("-")) // [ 'Deep', 'Kacha', 'RKU' ];
+console.log(name.split("-").join(" ")) // Deep Kacha RKU;
