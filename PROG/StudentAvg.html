@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Average</title>
+</head>
+<body>
+    <h2>Student Details</h2>
+    <div id="output"></div>
+
+    <script>
+    class Student {
+        constructor(rlno, name, branch, s1, s2, s3) {
+            this.rlno = rlno;
+            this.name = name;
+            this.branch = branch;
+            this.s1 = s1;
+            this.s2 = s2;
+            this.s3 = s3;
+            this.calcAvg();
+        }
+
+        calcAvg() {
+            this.avg = (this.s1 + this.s2 + this.s3) / 3;
+        }
+
+        get average() {
+            return this.avg;
+        }
+
+        showDetails() {
+            const outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = `
+                <p><strong>Roll No:</strong> ${this.rlno}</p>
+                <p><strong>Name:</strong> ${this.name}</p>
+                <p><strong>Branch:</strong> ${this.branch}</p>
+                <p><strong>Average Marks:</strong> ${this.average.toFixed(2)}</p>
+            `;
+        }
+    }
+
+    // Get input from user
+    const rlno = parseInt(prompt("Enter Roll Number:"));
+    const name = prompt("Enter Name:");
+    const branch = prompt("Enter Branch:");
+    const s1 = parseInt(prompt("Enter Marks for Subject 1:"));
+    const s2 = parseInt(prompt("Enter Marks for Subject 2:"));
+    const s3 = parseInt(prompt("Enter Marks for Subject 3:"));
+
+    // Create student object and show details
+    const student = new Student(rlno, name, branch, s1, s2, s3);
+    student.showDetails();
+    </script>
+</body>
+</html>
