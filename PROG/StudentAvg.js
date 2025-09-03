@@ -6,20 +6,17 @@ class Student {
         this.s1 = s1;
         this.s2 = s2;
         this.s3 = s3;
-        this.calcAvg();  // call method to calculate average
+        this.calcAvg();  
     }
-
-    // Method to calculate average
+    
     calcAvg() {
         this.avg = (this.s1 + this.s2 + this.s3) / 3;
     }
 
-    // Read-only property for average
     get average() {
         return this.avg;
     }
 
-    // Display details
     showDetails() {
         console.log("Roll No is : " + this.rlno);
         console.log("Name is : " + this.name);
@@ -29,9 +26,11 @@ class Student {
     }
 }
 
-// Main code
 const s1 = new Student(1111, "Deep", "CE", 77, 23, 96);
 s1.showDetails();
 
 const s2 = new Student(2222, "Kris", "IT", 80, 70, 60);
 s2.showDetails();
+
+const s3 = new Student(3333, "Adii", "ME", 85, 75, 65);
+s3.showDetails();
