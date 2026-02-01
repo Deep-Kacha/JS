@@ -54,7 +54,7 @@ async function fetchRepositories(reposUrl) {
   reposContainer.innerHTML = '<div class="loading-repos">Loading repositories...</div>';
 
   try {
-    const response = await fetch(reposUrl + "?per_page=6");
+    const response = await fetch(reposUrl + "?per_page");
     const repos = await response.json();
     displayRepos(repos);
   } catch (error) {
@@ -160,6 +160,25 @@ function formatDate(dateString) {
     day: "numeric",
   });
 }
+
+// Back to Top Button
+const backToTopBtn = document.getElementById("backToTop");
+backToTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTopBtn.style.display = "block";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
+});
+
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
 
 // searchInput.value = "Deep-Kacha";
 // searchUser();
