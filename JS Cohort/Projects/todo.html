@@ -12,7 +12,7 @@
       }
 
       body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         background: #f0f2f5;
         min-height: 100vh;
         display: flex;
@@ -107,36 +107,36 @@
       </div>
     </div>
     <script>
-      const createButtonRef = document.getElementById('createButton');
-      const todoInputRef = document.getElementById('todoInput');
-      const todoContainerRef = document.getElementById('todoContainer');
+      const createButtonRef = document.getElementById("createButton");
+      const todoInputRef = document.getElementById("todoInput");
+      const todoContainerRef = document.getElementById("todoContainer");
 
       (async () => {
-        fetch('https://api.freeapi.app/api/v1/public/quotes', {
-          method: 'GET',
+        fetch("https://api.freeapi.app/api/v1/public/quotes", {
+          method: "GET",
         })
           .then((response) => response.json()) // JSON => Object
           .then((data) => {
             for (const obj of data.data.data) {
-              const li = document.createElement('li');
+              const li = document.createElement("li");
               li.innerText = obj.content;
               todoContainerRef.appendChild(li);
             }
           });
       })();
 
-      createButtonRef.addEventListener('click', function () {
+      createButtonRef.addEventListener("click", function () {
         const value = todoInputRef.value;
         console.log(value);
 
-        const li = document.createElement('li'); // <li></li>
+        const li = document.createElement("li"); // <li></li>
         li.innerText = value; // <li>{value}</li>
-        li.addEventListener('click', function () {
+        li.addEventListener("click", function () {
           li.remove();
         });
 
         todoContainerRef.appendChild(li);
-        todoInputRef.value = '';
+        todoInputRef.value = "";
       });
     </script>
   </body>
